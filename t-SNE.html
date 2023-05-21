@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style_each.css" rel="stylesheet" type="text/css"/>
+    <title>Hanjun Jiang's Blog</title>
+</head>
+<body>
+    <div class="top">
+        <img src="logo.png" alt="logo">
+        <a href="blog.html">Hanjun Jiang's fastai Blog</a>
+    </div>
+    <div class="intro">
+        <h3>Understanding t-SNE: A Tool for Visualizing High-Dimensional Data</h3>
+        <p>
+            Hello everyone! As we journey deeper into the world of AI and machine learning, we often encounter complex, high-dimensional data. Visualizing this data can be a real challenge. Today, we're going to explore <a href="http://scikit-learn.org/stable/modules/generated/sklearn.manifold.TSNE.html">t-SNE</a>, a powerful tool designed for this exact purpose.
+        </p>
+        <h5>· What is t-SNE?</h5>
+        <p>
+            t-SNE, which stands for t-Distributed Stochastic Neighbor Embedding, is a machine learning algorithm developed by Laurens van der Maaten and Geoffrey Hinton. It's a dimensionality reduction technique used for visualizing high-dimensional data by projecting it into a two or three-dimensional space.
+        </p>
+        <h5>· How Does t-SNE Work?</h5>
+        <p>
+            Without diving too deep into the mathematical details, here's a simplified explanation of how t-SNE works:<br><br>
+
+            1. Similarity Calculation in High-Dimensional Space: t-SNE starts 2.by calculating the probability that pairs of data points in the high-dimensional space are similar. Points that are close to each other are given a higher probability.<br><br>
+
+            2. Similarity Calculation in Low-Dimensional Space: Next, t-SNE defines a similar probability distribution over the points in the low-dimensional map.<br><br>
+
+            3. Minimization of Difference: t-SNE then minimizes the difference between the high-dimensional and low-dimensional distributions using a method called gradient descent.
+        </p>
+        <h5>· Using t-SNE in Python</h5>
+        <p>
+            In Python, you can use the scikit-learn library to perform t-SNE. Here's a simple example:<br>
+            <span>from sklearn.manifold import TSNE</span><br>
+            <span>import matplotlib.pyplot as plt</span><br><br>
+            <span>tsne = TSNE(n_components=2, random_state=0)</span><br>
+            <span>X_2d = tsne.fit_transform(X)</span><br><br>
+            <span>plt.figure(figsize=(6, 5))</span><br>
+            <span>plt.scatter(X_2d[:, 0], X_2d[:, 1])</span><br>
+            <span>plt.show()</span>
+        </p>
+        
+        <h5>· Key Considerations When Using t-SNE</h5>
+        <p>
+            While t-SNE is a powerful tool, it's not without its nuances and considerations:<br><br>
+
+            1. Perplexity: The perplexity parameter can greatly impact your results. It can be loosely interpreted as the balance between preserving the local and global aspects of your data. You might need to experiment with different values to find the one that best visualizes your data.<br><br>
+
+            2. Randomness: The t-SNE algorithm incorporates a random initialization step, which means that you might get different results each time you run it. To reproduce your results, you'll need to set the random seed.<br><br>
+
+            3. No Clustering: Despite what your t-SNE plot might suggest, t-SNE does not form clusters and the distance between clusters in the plot does not have a meaningful interpretation.
+        </p>
+        
+        <h5>· Conclusion</h5>
+        <p>
+            t-SNE is an invaluable tool for visualizing complex, high-dimensional datasets. By effectively reducing the dimensionality of data, it allows us to see patterns and structures that might otherwise be hidden. However, it's important to understand its limitations and use it as part of a broader toolkit of data analysis methods.
+        </p>
+
+    </div>
+    <div class="end"></div>
+</body>
+</html>
